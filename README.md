@@ -134,6 +134,9 @@ A candidate who deeply understands **150 carefully chosen interview problems** i
 
 ---
 
+## 📁 Repository Structure
+
+```text
 python-dsa-journey/
 │
 ├── README.md
@@ -141,72 +144,72 @@ python-dsa-journey/
 ├── PROGRESS_TRACKER.md
 ├── .gitignore
 │
-├── 01-Python-Fundamentals
-│ ├── 01-Introduction-to-Python
-│ ├── 02-Variables-and-Data-Types
-│ ├── 03-Input-and-Output
-│ ├── 04-Type-Casting
-│ ├── 05-Operators
-│ ├── 06-Conditional-Statements
-│ ├── 07-Loops
-│ ├── 08-Functions
-│ ├── 09-Scope
-│ ├── 10-Modules-and-Packages
-│ ├── 11-Strings
-│ ├── 12-Lists
-│ ├── 13-Tuples
-│ ├── 14-Sets
-│ ├── 15-Dictionaries
-│ ├── 16-Comprehensions
-│ ├── 17-Exception-Handling
-│ ├── 18-File-Handling
-│ ├── 19-OOP
-│ ├── 20-Iterators-and-Generators
-│ ├── 21-Decorators
-│ ├── 22-Lambda-Map-Filter-Reduce
-│ ├── 23-Virtual-Environment
-│ ├── 24-Python-Best-Practices
-│ └── 25-Debugging
+├── 01-Python-Fundamentals/
+│   ├── 01-Introduction-to-Python/
+│   ├── 02-Variables-and-Data-Types/
+│   ├── 03-Input-and-Output/
+│   ├── 04-Type-Casting/
+│   ├── 05-Operators/
+│   ├── 06-Conditional-Statements/
+│   ├── 07-Loops/
+│   ├── 08-Functions/
+│   ├── 09-Scope/
+│   ├── 10-Modules-and-Packages/
+│   ├── 11-Strings/
+│   ├── 12-Lists/
+│   ├── 13-Tuples/
+│   ├── 14-Sets/
+│   ├── 15-Dictionaries/
+│   ├── 16-Comprehensions/
+│   ├── 17-Exception-Handling/
+│   ├── 18-File-Handling/
+│   ├── 19-OOP/
+│   ├── 20-Iterators-and-Generators/
+│   ├── 21-Decorators/
+│   ├── 22-Lambda-Map-Filter-Reduce/
+│   ├── 23-Virtual-Environment/
+│   ├── 24-Python-Best-Practices/
+│   └── 25-Debugging/
 │
-├── 02-Logic-Building
-│ ├── Pattern-Problems
-│ ├── Number-Problems
-│ ├── Mathematical-Problems
-│ ├── Dry-Run-Practice
-│ ├── Pseudo-Code
-│ └── Flowcharts
+├── 02-Logic-Building/
+│   ├── Pattern-Problems/
+│   ├── Number-Problems/
+│   ├── Mathematical-Problems/
+│   ├── Dry-Run-Practice/
+│   ├── Pseudo-Code/
+│   └── Flowcharts/
 │
-├── 03-Time-and-Space-Complexity
+├── 03-Time-and-Space-Complexity/
+├── 04-Arrays/
+├── 05-Strings/
+├── 06-Recursion/
+├── 07-Searching/
+├── 08-Sorting/
+├── 09-Linked-List/
+├── 10-Stack/
+├── 11-Queue/
+├── 12-Hashing/
+├── 13-Trees/
+├── 14-BST/
+├── 15-Heaps/
+├── 16-Trie/
+├── 17-Graphs/
+├── 18-Greedy/
+├── 19-Backtracking/
+├── 20-Dynamic-Programming/
+├── 21-Bit-Manipulation/
+├── 22-Math/
+├── 23-Advanced-DSA/
+├── 24-Interview-Questions/
+├── 25-Mock-Interviews/
 │
-├── 04-Arrays
-├── 05-Strings
-├── 06-Recursion
-├── 07-Searching
-├── 08-Sorting
-├── 09-Linked-List
-├── 10-Stack
-├── 11-Queue
-├── 12-Hashing
-├── 13-Trees
-├── 14-BST
-├── 15-Heaps
-├── 16-Trie
-├── 17-Graphs
-├── 18-Greedy
-├── 19-Backtracking
-├── 20-Dynamic-Programming
-├── 21-Bit-Manipulation
-├── 22-Math
-├── 23-Advanced-DSA
-├── 24-Interview-Questions
-├── 25-Mock-Interviews
+├── LeetCode/
+│   ├── Easy/
+│   ├── Medium/
+│   └── Hard/
 │
-├── LeetCode
-│ ├── Easy
-│ ├── Medium
-│ └── Hard
-│
-├── Notes
-├── CheatSheets
-├── Revision
-└── Resources
+├── Notes/
+├── CheatSheets/
+├── Revision/
+└── Resources/
+```
