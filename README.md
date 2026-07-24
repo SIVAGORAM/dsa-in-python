@@ -1,4 +1,4 @@
-# DSA Roadmap 2026 (Python) – Inspired by Akshay Saini (NamasteDev)
+# DSA Roadmap 2026 (Python)
 
 ## Timeline
 
@@ -67,11 +67,11 @@ The objective is not to memorize solutions but to master the underlying patterns
 
 ---
 
-# Follow the NamasteDev DSA Sheet
+# Follow a Structured DSA Sheet
 
 Primary Resource:
 
-- Follow the structured **DSA Sheet** available on the **NamasteDev** platform by Akshay Saini.
+- Follow a structured **DSA Sheet** (e.g., NeetCode 150, Striver's A2Z, or Blind 75).
 
 Do not jump randomly between different platforms.
 
@@ -118,8 +118,7 @@ Repeated revision builds long-term retention.
 
 Practice on:
 
-- NamasteDev DSA Sheet (Primary)
-- LeetCode
+- LeetCode (Primary)
 - GeeksforGeeks
 - HackerRank
 - Coding Ninjas (optional)
