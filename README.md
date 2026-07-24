@@ -145,31 +145,15 @@ python-dsa-journey/
 ├── .gitignore
 │
 ├── 01-Python-Fundamentals/
-│   ├── 01-Introduction-to-Python/
-│   ├── 02-Variables-and-Data-Types/
-│   ├── 03-Input-and-Output/
-│   ├── 04-Type-Casting/
-│   ├── 05-Operators/
-│   ├── 06-Conditional-Statements/
-│   ├── 07-Loops/
-│   ├── 08-Functions/
-│   ├── 09-Scope/
-│   ├── 10-Modules-and-Packages/
-│   ├── 11-Strings/
-│   ├── 12-Lists/
-│   ├── 13-Tuples/
-│   ├── 14-Sets/
-│   ├── 15-Dictionaries/
-│   ├── 16-Comprehensions/
-│   ├── 17-Exception-Handling/
-│   ├── 18-File-Handling/
-│   ├── 19-OOP/
-│   ├── 20-Iterators-and-Generators/
-│   ├── 21-Decorators/
-│   ├── 22-Lambda-Map-Filter-Reduce/
-│   ├── 23-Virtual-Environment/
-│   ├── 24-Python-Best-Practices/
-│   └── 25-Debugging/
+│   ├── 01-Basics/
+│   ├── 02-Control-Flow/
+│   ├── 03-Data-Structures/
+│   ├── 04-Functions/
+│   ├── 05-Advanced-Python-for-DSA/
+│   ├── 06-OOP/
+│   ├── 07-Exception-Handling/
+│   ├── 08-File-Handling/
+│   └── 09-Modules-and-Packages/
 │
 ├── 02-Logic-Building/
 │   ├── Pattern-Problems/
