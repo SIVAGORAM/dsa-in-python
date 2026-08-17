@@ -1,0 +1,2002 @@
+# Python Logic Building — Questions 21 to 30
+
+> Quick revision notes for Python DSA logic building.
+>
+> Each question includes: **Question → Answer → Meaning → Logic → Step-by-step dry run → Test cases → Common mistakes → Interview explanation → Key concepts → Memory trick → Final logic → Complexity**.
+
+---
+
+# Question 21 — Print the squares of numbers from 1 to n
+
+## Question
+
+Print the squares of numbers from `1` to `n`.
+
+## Answer
+
+```python
+def main():
+    n = 5
+
+    for number in range(1, n + 1):
+        print(number * number)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## What does the question mean?
+
+For `n = 5`, print:
+
+```text
+1²
+2²
+3²
+4²
+5²
+```
+
+Output:
+
+```text
+1
+4
+9
+16
+25
+```
+
+## Logic
+
+- Loop from `1` through `n`.
+- Calculate `number * number`.
+- Print the result.
+
+## Dry Run
+
+For `n = 5`:
+
+```text
+number = 1 → 1 × 1 = 1
+number = 2 → 2 × 2 = 4
+number = 3 → 3 × 3 = 9
+number = 4 → 4 × 4 = 16
+number = 5 → 5 × 5 = 25
+```
+
+## Important concept
+
+```python
+number * number
+```
+
+means square.
+
+You can also use:
+
+```python
+number ** 2
+```
+
+## Test Cases
+
+| Input | Expected Output |
+|---|---|
+| `n = 5` | `1 4 9 16 25` |
+| `n = 3` | `1 4 9` |
+| `n = 1` | `1` |
+| `n = 0` | No output |
+
+## Common mistakes
+
+Wrong:
+
+```python
+range(1, n)
+```
+
+This excludes `n`.
+
+Correct:
+
+```python
+range(1, n + 1)
+```
+
+## Interview explanation
+
+> “I iterate from 1 through n and multiply each number by itself to calculate and print its square.”
+
+## Memory trick
+
+**LOOP → SQUARE → PRINT**
+
+## Complexity
+
+- Time: `O(n)`
+- Extra space: `O(1)`
+
+---
+
+# Question 22 — Print cubes of numbers from 1 to n
+
+## Question
+
+Print the cubes of numbers from `1` to `n`.
+
+## Answer
+
+```python
+def main():
+    n = 5
+
+    for number in range(1, n + 1):
+        print(number * number * number)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## What does the question mean?
+
+For `n = 5`:
+
+```text
+1³ = 1
+2³ = 8
+3³ = 27
+4³ = 64
+5³ = 125
+```
+
+Output:
+
+```text
+1
+8
+27
+64
+125
+```
+
+## Logic
+
+```python
+number * number * number
+```
+
+calculates the cube.
+
+You can also use:
+
+```python
+number ** 3
+```
+
+## Dry Run
+
+```text
+1 → 1 × 1 × 1 = 1
+2 → 2 × 2 × 2 = 8
+3 → 3 × 3 × 3 = 27
+4 → 4 × 4 × 4 = 64
+5 → 5 × 5 × 5 = 125
+```
+
+## Important concept
+
+```text
+number ** 2 → square
+number ** 3 → cube
+```
+
+## Test Cases
+
+| Input | Expected Output |
+|---|---|
+| `n = 5` | `1 8 27 64 125` |
+| `n = 3` | `1 8 27` |
+| `n = 1` | `1` |
+| `n = 0` | No output |
+
+## Common mistakes
+
+Do not use:
+
+```python
+number * number
+```
+
+That calculates the square, not the cube.
+
+Correct:
+
+```python
+number * number * number
+```
+
+## Interview explanation
+
+> “I iterate from 1 through n and multiply each number by itself three times to calculate its cube.”
+
+## Memory trick
+
+**LOOP → CUBE → PRINT**
+
+## Complexity
+
+- Time: `O(n)`
+- Extra space: `O(1)`
+
+---
+
+# Question 23 — Print all numbers between a and b divisible by 7
+
+## Question
+
+Print all numbers between `a` and `b` that are divisible by `7`.
+
+## Answer
+
+```python
+def main():
+    a = 1
+    b = 100
+
+    for number in range(a, b + 1):
+        if number % 7 == 0:
+            print(number)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## What does the question mean?
+
+Check every number from `a` to `b`.
+
+If division by `7` leaves remainder `0`, print it.
+
+For `1` to `100`:
+
+```text
+7
+14
+21
+28
+35
+42
+49
+56
+63
+70
+77
+84
+91
+98
+```
+
+## Important concept — `%`
+
+The modulo operator gives the remainder.
+
+```text
+14 % 7 = 0  → divisible
+15 % 7 = 1  → not divisible
+```
+
+Therefore:
+
+```python
+number % 7 == 0
+```
+
+means the number is divisible by `7`.
+
+## Dry Run
+
+For `a = 1`, `b = 10`:
+
+```text
+1 % 7 = 1 → skip
+2 % 7 = 2 → skip
+3 % 7 = 3 → skip
+4 % 7 = 4 → skip
+5 % 7 = 5 → skip
+6 % 7 = 6 → skip
+7 % 7 = 0 → print 7
+8 % 7 = 1 → skip
+9 % 7 = 2 → skip
+10 % 7 = 3 → skip
+```
+
+## Test Cases
+
+| Input | Expected |
+|---|---|
+| `1, 100` | `7, 14, 21, ..., 98` |
+| `10, 30` | `14, 21, 28` |
+| `20, 50` | `21, 28, 35, 42, 49` |
+| `7, 7` | `7` |
+| `8, 13` | No output |
+
+## Common mistakes
+
+Wrong:
+
+```python
+range(a, b)
+```
+
+Correct:
+
+```python
+range(a, b + 1)
+```
+
+Wrong:
+
+```python
+number / 7 == 0
+```
+
+Correct:
+
+```python
+number % 7 == 0
+```
+
+## Interview explanation
+
+> “I iterate from a through b and use modulo to check whether the remainder after division by 7 is zero.”
+
+## Memory trick
+
+**DIVISIBLE → MODULO → REMAINDER 0**
+
+## Complexity
+
+- Time: `O(b - a + 1)`
+- Extra space: `O(1)`
+
+---
+
+# Question 24 — Find HCF (GCD) of two numbers using loops
+
+## Question
+
+Find the HCF/GCD of two numbers.
+
+## Answer
+
+```python
+def main():
+    first = 48
+    second = 18
+
+    while second != 0:
+        remainder = first % second
+        first = second
+        second = remainder
+
+    print("GCD = " + str(abs(first)))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## What does the question mean?
+
+HCF and GCD mean the same thing:
+
+- HCF = Highest Common Factor
+- GCD = Greatest Common Divisor
+
+For `48` and `18`, the answer is:
+
+```text
+GCD = 6
+```
+
+## Euclidean Algorithm
+
+The key rule is:
+
+```text
+GCD(a, b) = GCD(b, a % b)
+```
+
+## Dry Run
+
+Initial:
+
+```text
+first = 48
+second = 18
+```
+
+### Iteration 1
+
+```text
+48 % 18 = 12
+
+first = 18
+second = 12
+```
+
+### Iteration 2
+
+```text
+18 % 12 = 6
+
+first = 12
+second = 6
+```
+
+### Iteration 3
+
+```text
+12 % 6 = 0
+
+first = 6
+second = 0
+```
+
+Now:
+
+```text
+second != 0
+0 != 0 → False
+```
+
+Stop.
+
+```text
+GCD = 6
+```
+
+## Test Cases
+
+| Input | Expected |
+|---|---|
+| `48, 18` | `6` |
+| `18, 48` | `6` |
+| `20, 8` | `4` |
+| `15, 10` | `5` |
+| `7, 3` | `1` |
+| `12, 12` | `12` |
+
+## Common mistakes
+
+Remember the exact update order:
+
+```python
+remainder = first % second
+first = second
+second = remainder
+```
+
+Do not forget to update the values.
+
+## Interview explanation
+
+> “I use the Euclidean algorithm. I repeatedly replace `(first, second)` with `(second, first % second)` until the second value becomes zero. The first value is the GCD.”
+
+## Memory trick
+
+**REMAINDER → SHIFT → REPEAT**
+
+## Complexity
+
+- Time: `O(log(min(first, second)))`
+- Extra space: `O(1)`
+
+---
+
+# Question 25 — Find LCM of two numbers using loops
+
+## Question
+
+Find the LCM of two numbers.
+
+## Answer
+
+```python
+def main():
+    first = 12
+    second = 18
+
+    a = first
+    b = second
+
+    while b != 0:
+        remainder = a % b
+        a = b
+        b = remainder
+
+    lcm = abs(first * second) // abs(a)
+
+    print("LCM = " + str(lcm))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## What does the question mean?
+
+LCM means:
+
+**Least Common Multiple**
+
+For `12` and `18`:
+
+```text
+Multiples of 12:
+12, 24, 36, 48, ...
+
+Multiples of 18:
+18, 36, 54, ...
+
+First common multiple = 36
+```
+
+Therefore:
+
+```text
+LCM = 36
+```
+
+## Important formula
+
+```text
+GCD × LCM = first × second
+```
+
+Therefore:
+
+```text
+LCM = (first × second) / GCD
+```
+
+For integer results in Python:
+
+```python
+lcm = abs(first * second) // abs(a)
+```
+
+## Dry Run
+
+Find LCM of `12` and `18`.
+
+### Find GCD
+
+```text
+a = 12
+b = 18
+```
+
+```text
+12 % 18 = 12
+a = 18
+b = 12
+```
+
+```text
+18 % 12 = 6
+a = 12
+b = 6
+```
+
+```text
+12 % 6 = 0
+a = 6
+b = 0
+```
+
+Therefore:
+
+```text
+GCD = 6
+```
+
+### Find LCM
+
+```text
+LCM = (12 × 18) // 6
+    = 216 // 6
+    = 36
+```
+
+## Test Cases
+
+| Input | Expected |
+|---|---|
+| `12, 18` | `36` |
+| `20, 8` | `40` |
+| `15, 10` | `30` |
+| `7, 3` | `21` |
+| `12, 12` | `12` |
+| `5, 1` | `5` |
+
+## Important correction
+
+Using:
+
+```python
+/
+```
+
+produces a float:
+
+```text
+36.0
+```
+
+Using:
+
+```python
+//
+```
+
+produces:
+
+```text
+36
+```
+
+## Common mistakes
+
+- Forgetting to calculate GCD first.
+- Modifying the original numbers before the LCM formula.
+- Using `/` when an integer result is expected.
+- Not handling zero inputs if zero is allowed.
+
+For robust zero handling:
+
+```python
+if first == 0 or second == 0:
+    lcm = 0
+```
+
+## Interview explanation
+
+> “I first calculate the GCD using the Euclidean algorithm, then use `LCM = (first × second) / GCD`.”
+
+## Memory trick
+
+**GCD FIRST → FORMULA → LCM**
+
+## Complexity
+
+- Time: `O(log(min(first, second)))`
+- Extra space: `O(1)`
+
+---
+
+# Question 26 — Print all factors of a given number
+
+## Question
+
+Print all factors of a number.
+
+## Answer
+
+```python
+def main():
+    number = 36
+
+    for factor in range(1, number + 1):
+        if number % factor == 0:
+            print(factor)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## What does the question mean?
+
+A factor is a number that divides another number exactly.
+
+For `36`:
+
+```text
+1
+2
+3
+4
+6
+9
+12
+18
+36
+```
+
+are factors.
+
+## Logic
+
+Check every number from `1` to `number`.
+
+```python
+if number % factor == 0:
+```
+
+If remainder is `0`, print the factor.
+
+## Dry Run
+
+For `36`:
+
+```text
+36 % 1 = 0 → print 1
+36 % 2 = 0 → print 2
+36 % 3 = 0 → print 3
+36 % 4 = 0 → print 4
+36 % 5 = 1 → skip
+36 % 6 = 0 → print 6
+36 % 7 = 1 → skip
+36 % 8 = 4 → skip
+36 % 9 = 0 → print 9
+...
+36 % 36 = 0 → print 36
+```
+
+Output:
+
+```text
+1
+2
+3
+4
+6
+9
+12
+18
+36
+```
+
+## Test Cases
+
+| Input | Expected |
+|---|---|
+| `36` | `1, 2, 3, 4, 6, 9, 12, 18, 36` |
+| `10` | `1, 2, 5, 10` |
+| `12` | `1, 2, 3, 4, 6, 12` |
+| `7` | `1, 7` |
+| `1` | `1` |
+| `16` | `1, 2, 4, 8, 16` |
+
+## Common mistakes
+
+Wrong:
+
+```python
+range(1, number)
+```
+
+Correct:
+
+```python
+range(1, number + 1)
+```
+
+Wrong:
+
+```python
+factor % number == 0
+```
+
+Correct:
+
+```python
+number % factor == 0
+```
+
+Never start from `0`, because:
+
+```python
+number % 0
+```
+
+causes division-by-zero error.
+
+## Interview explanation
+
+> “I iterate from 1 through the number and print each value that divides the number exactly.”
+
+## Memory trick
+
+**LOOP → MODULO → CHECK → PRINT**
+
+## Complexity
+
+- Time: `O(n)`
+- Extra space: `O(1)`
+
+> Later, this can be optimized to `O(√n)` by checking factor pairs.
+
+---
+
+# Question 27 — Find the sum of all factors of a number
+
+## Question
+
+Find the sum of all factors of a number.
+
+## Answer
+
+```python
+def main():
+    number = 36
+    sum = 0
+
+    for factor in range(1, number + 1):
+        if number % factor == 0:
+            sum += factor
+
+    print("Factor sum = " + str(sum))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## What does the question mean?
+
+First find all factors.
+
+For `36`:
+
+```text
+1, 2, 3, 4, 6, 9, 12, 18, 36
+```
+
+Then add them:
+
+```text
+1 + 2 + 3 + 4 + 6 + 9 + 12 + 18 + 36
+= 91
+```
+
+Therefore:
+
+```text
+Factor sum = 91
+```
+
+## Important new concept — Accumulator
+
+Start:
+
+```python
+sum = 0
+```
+
+Whenever a factor is found:
+
+```python
+sum += factor
+```
+
+This means:
+
+```python
+sum = sum + factor
+```
+
+## Dry Run
+
+For `36`:
+
+```text
+sum = 0
+```
+
+```text
+factor 1 → factor → sum = 1
+factor 2 → factor → sum = 3
+factor 3 → factor → sum = 6
+factor 4 → factor → sum = 10
+factor 5 → not factor → sum = 10
+factor 6 → factor → sum = 16
+factor 7 → not factor
+factor 8 → not factor
+factor 9 → factor → sum = 25
+```
+
+Continue:
+
+```text
++ 12 = 37
++ 18 = 55
++ 36 = 91
+```
+
+Final:
+
+```text
+91
+```
+
+## Test Cases
+
+| Input | Expected |
+|---|---|
+| `36` | `91` |
+| `10` | `18` |
+| `12` | `28` |
+| `7` | `8` |
+| `1` | `1` |
+| `16` | `31` |
+
+## Common mistakes
+
+Do not initialize:
+
+```python
+sum = 1
+```
+
+Use:
+
+```python
+sum = 0
+```
+
+Do not add every number. Add only factors:
+
+```python
+if number % factor == 0:
+    sum += factor
+```
+
+## Interview explanation
+
+> “I iterate through all possible factors, check divisibility using modulo, and add every valid factor to a running sum.”
+
+## Memory trick
+
+**LOOP → CHECK → ADD → REPEAT**
+
+## Important connection with Q26
+
+Q26:
+
+```python
+if number % factor == 0:
+    print(factor)
+```
+
+Q27:
+
+```python
+if number % factor == 0:
+    sum += factor
+```
+
+Same factor logic; only the action changes.
+
+## Complexity
+
+- Time: `O(n)`
+- Extra space: `O(1)`
+
+---
+
+# Question 28 — Check if a number is a Strong Number
+
+## Question
+
+Check if:
+
+**Sum of factorials of digits = original number**
+
+## Answer
+
+```python
+def factorial(number):
+    result = 1
+
+    for value in range(2, number + 1):
+        result *= value
+
+    return result
+
+
+def isStrongNumber(number):
+    value = abs(number)
+    sum = 0
+
+    while True:
+        digit = value % 10
+        sum += factorial(digit)
+        value //= 10
+
+        if not (value > 0):
+            break
+
+    return sum == abs(number)
+
+
+def main():
+    number = 145
+
+    print(
+        "Strong number"
+        if isStrongNumber(number)
+        else "Not a strong number"
+    )
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## What does the question mean?
+
+A Strong Number is a number where:
+
+```text
+SUM OF FACTORIALS OF DIGITS
+=
+ORIGINAL NUMBER
+```
+
+For:
+
+```text
+145
+```
+
+we calculate:
+
+```text
+1! + 4! + 5!
+= 1 + 24 + 120
+= 145
+```
+
+Therefore:
+
+```text
+145 is a Strong Number
+```
+
+## Important correction
+
+Do **not** calculate:
+
+```python
+factorial(number)
+```
+
+For `145`, that means `145!`, which is not the question.
+
+We need:
+
+```text
+factorial(1)
+factorial(4)
+factorial(5)
+```
+
+and add them.
+
+## Factorial
+
+```text
+5! = 5 × 4 × 3 × 2 × 1 = 120
+4! = 24
+3! = 6
+2! = 2
+1! = 1
+0! = 1
+```
+
+## Dry Run — 145
+
+Initial:
+
+```text
+value = 145
+sum = 0
+```
+
+### Iteration 1
+
+```text
+digit = 145 % 10 = 5
+5! = 120
+sum = 0 + 120 = 120
+value = 145 // 10 = 14
+```
+
+### Iteration 2
+
+```text
+digit = 14 % 10 = 4
+4! = 24
+sum = 120 + 24 = 144
+value = 14 // 10 = 1
+```
+
+### Iteration 3
+
+```text
+digit = 1 % 10 = 1
+1! = 1
+sum = 144 + 1 = 145
+value = 1 // 10 = 0
+```
+
+Stop.
+
+Compare:
+
+```text
+sum = 145
+number = 145
+
+145 == 145 → True
+```
+
+Therefore:
+
+```text
+Strong number
+```
+
+## Other examples
+
+### 2
+
+```text
+2! = 2
+```
+
+Strong Number.
+
+### 40585
+
+```text
+4! + 0! + 5! + 8! + 5!
+
+= 24 + 1 + 120 + 40320 + 120
+
+= 40585
+```
+
+Strong Number.
+
+### 123
+
+```text
+1! + 2! + 3!
+= 1 + 2 + 6
+= 9
+```
+
+`9 != 123`, so not Strong.
+
+## Test Cases
+
+| Input | Expected |
+|---|---|
+| `145` | Strong |
+| `2` | Strong |
+| `40585` | Strong |
+| `123` | Not Strong |
+| `10` | Not Strong |
+| `1` | Strong |
+
+## Common mistakes
+
+1. Calculating `number!` instead of each digit's factorial.
+2. Forgetting `% 10`.
+3. Forgetting `// 10`.
+4. Starting factorial result at `0`.
+5. Forgetting `0! = 1`.
+6. Comparing with the changing `value` instead of the original number.
+
+## Interview explanation
+
+> “I extract each digit using `% 10`, calculate its factorial, add it to a running sum, remove the digit using `// 10`, and finally compare the sum with the original number.”
+
+## Memory trick
+
+**DIGIT → FACTORIAL → ADD → REMOVE → REPEAT → COMPARE**
+
+## Complexity
+
+If the number has `d` digits and factorial is calculated separately for each digit:
+
+- Time: `O(d × 9)` → effectively `O(d)` because digits are at most 9.
+- Extra space: `O(1)`
+
+---
+
+# Question 29 — Print first n terms of an arithmetic progression
+
+## Question
+
+> **Note:** This question is the natural AP counterpart to Q30. The original Q29 code was not provided in this conversation, so this revision uses the standard form: first term `a`, common difference `d`, and `n` terms.
+
+Print the first `n` terms of an Arithmetic Progression (AP).
+
+## Answer
+
+```python
+def main():
+    n = 5
+    term = 2
+    difference = 3
+
+    for i in range(n):
+        print(term)
+        term += difference
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## What does the question mean?
+
+An Arithmetic Progression is a sequence where the same number is **added** to every term.
+
+Example:
+
+```text
+2, 5, 8, 11, 14
+```
+
+The common difference is:
+
+```text
+3
+```
+
+because:
+
+```text
+5 - 2 = 3
+8 - 5 = 3
+11 - 8 = 3
+14 - 11 = 3
+```
+
+## Logic
+
+Start with:
+
+```text
+term = 2
+```
+
+Then repeatedly add:
+
+```text
+difference = 3
+```
+
+Pattern:
+
+```text
+PRINT → ADD DIFFERENCE → REPEAT
+```
+
+## Dry Run
+
+Input:
+
+```text
+n = 5
+term = 2
+difference = 3
+```
+
+### Iteration 1
+
+```text
+print 2
+2 + 3 = 5
+```
+
+### Iteration 2
+
+```text
+print 5
+5 + 3 = 8
+```
+
+### Iteration 3
+
+```text
+print 8
+8 + 3 = 11
+```
+
+### Iteration 4
+
+```text
+print 11
+11 + 3 = 14
+```
+
+### Iteration 5
+
+```text
+print 14
+14 + 3 = 17
+```
+
+`17` is calculated but not printed because only 5 terms are required.
+
+Output:
+
+```text
+2
+5
+8
+11
+14
+```
+
+## AP Formula
+
+The nth term is:
+
+```text
+a + (n - 1)d
+```
+
+For:
+
+```text
+a = 2
+d = 3
+n = 5
+```
+
+```text
+2 + (5 - 1) × 3
+= 2 + 12
+= 14
+```
+
+## AP vs GP
+
+### AP
+
+Add the same number:
+
+```text
+2, 5, 8, 11, 14
+```
+
+Python:
+
+```python
+term += difference
+```
+
+### GP
+
+Multiply by the same number:
+
+```text
+2, 6, 18, 54, 162
+```
+
+Python:
+
+```python
+term *= ratio
+```
+
+## Test Cases
+
+| n | First term | Difference | Expected |
+|---:|---:|---:|---|
+| 5 | 2 | 3 | `2, 5, 8, 11, 14` |
+| 4 | 5 | 2 | `5, 7, 9, 11` |
+| 5 | 10 | 0 | `10, 10, 10, 10, 10` |
+| 1 | 7 | 5 | `7` |
+| 0 | 2 | 3 | No output |
+
+## Common mistakes
+
+Wrong:
+
+```python
+term *= difference
+```
+
+That creates multiplication, which is GP logic.
+
+Correct:
+
+```python
+term += difference
+```
+
+## Interview explanation
+
+> “I start with the first term, print it, then add the common difference to generate the next term. I repeat this for n iterations.”
+
+## Memory trick
+
+**AP → ADD**
+
+**PRINT → ADD → REPEAT**
+
+## Complexity
+
+- Time: `O(n)`
+- Extra space: `O(1)`
+
+---
+
+# Question 30 — Print first n terms of a geometric progression
+
+## Question
+
+Print the first `n` terms of a Geometric Progression `(a, r)`.
+
+## Answer
+
+```python
+def main():
+    n = 5
+    term = 2
+    ratio = 3
+
+    for i in range(n):
+        print(term)
+        term *= ratio
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## What does the question mean?
+
+A Geometric Progression is a sequence where each term is obtained by multiplying the previous term by the same ratio.
+
+For:
+
+```text
+n = 5
+first term = 2
+ratio = 3
+```
+
+we get:
+
+```text
+2
+6
+18
+54
+162
+```
+
+## GP Formula
+
+The nth term is:
+
+```text
+a × r^(n - 1)
+```
+
+For the 5th term:
+
+```text
+2 × 3^(5 - 1)
+= 2 × 3⁴
+= 162
+```
+
+## Logic
+
+The important line is:
+
+```python
+term *= ratio
+```
+
+which means:
+
+```python
+term = term * ratio
+```
+
+## Dry Run
+
+Initial:
+
+```text
+n = 5
+term = 2
+ratio = 3
+```
+
+### Iteration 1
+
+```text
+print 2
+2 × 3 = 6
+```
+
+### Iteration 2
+
+```text
+print 6
+6 × 3 = 18
+```
+
+### Iteration 3
+
+```text
+print 18
+18 × 3 = 54
+```
+
+### Iteration 4
+
+```text
+print 54
+54 × 3 = 162
+```
+
+### Iteration 5
+
+```text
+print 162
+162 × 3 = 486
+```
+
+`486` is not printed because the loop has already printed 5 terms.
+
+Output:
+
+```text
+2
+6
+18
+54
+162
+```
+
+## Dry Run Table
+
+| Iteration | Current term | Printed | Next term |
+|---:|---:|---:|---:|
+| 1 | 2 | 2 | 6 |
+| 2 | 6 | 6 | 18 |
+| 3 | 18 | 18 | 54 |
+| 4 | 54 | 54 | 162 |
+| 5 | 162 | 162 | 486 |
+
+## Examples
+
+### Example 2
+
+```text
+n = 4
+term = 5
+ratio = 2
+```
+
+Output:
+
+```text
+5
+10
+20
+40
+```
+
+### Example 3
+
+```text
+n = 5
+term = 3
+ratio = 2
+```
+
+Output:
+
+```text
+3
+6
+12
+24
+48
+```
+
+### Example 4
+
+```text
+n = 5
+term = 10
+ratio = 1
+```
+
+Output:
+
+```text
+10
+10
+10
+10
+10
+```
+
+## Test Cases
+
+| n | First term | Ratio | Expected |
+|---:|---:|---:|---|
+| 5 | 2 | 3 | `2, 6, 18, 54, 162` |
+| 4 | 5 | 2 | `5, 10, 20, 40` |
+| 5 | 3 | 2 | `3, 6, 12, 24, 48` |
+| 5 | 10 | 1 | `10, 10, 10, 10, 10` |
+| 1 | 7 | 5 | `7` |
+| 0 | 2 | 3 | No output |
+
+## Common mistakes
+
+### Mistake 1 — Updating before printing
+
+Wrong:
+
+```python
+term *= ratio
+print(term)
+```
+
+This skips the first term.
+
+Correct:
+
+```python
+print(term)
+term *= ratio
+```
+
+### Mistake 2 — Addition instead of multiplication
+
+Wrong:
+
+```python
+term += ratio
+```
+
+That is AP logic.
+
+Correct for GP:
+
+```python
+term *= ratio
+```
+
+### Mistake 3 — Extra iteration
+
+Wrong:
+
+```python
+range(n + 1)
+```
+
+Correct:
+
+```python
+range(n)
+```
+
+## Interview explanation
+
+> “I start with the first term, print it, multiply it by the common ratio to get the next term, and repeat for n terms.”
+
+## Key concepts
+
+- First term
+- Common ratio
+- `for` loop
+- `range(n)`
+- `term *= ratio`
+
+## Memory trick
+
+**GP → MULTIPLY**
+
+**PRINT → MULTIPLY → REPEAT**
+
+## Complexity
+
+- Time: `O(n)`
+- Extra space: `O(1)`
+
+---
+
+# Quick Revision — Questions 21 to 30
+
+| Q | Topic | Main Logic |
+|---:|---|---|
+| 21 | Squares from 1 to n | `number * number` |
+| 22 | Cubes from 1 to n | `number * number * number` |
+| 23 | Numbers divisible by 7 | `number % 7 == 0` |
+| 24 | GCD / HCF | Euclidean Algorithm |
+| 25 | LCM | `(first * second) // GCD` |
+| 26 | All factors | `number % factor == 0` |
+| 27 | Sum of factors | `sum += factor` |
+| 28 | Strong Number | `sum += factorial(digit)` |
+| 29 | Arithmetic Progression | `term += difference` |
+| 30 | Geometric Progression | `term *= ratio` |
+
+---
+
+# Most Important Patterns to Remember
+
+## Pattern 1 — Range
+
+```python
+range(1, n + 1)
+```
+
+Means:
+
+```text
+1 through n
+```
+
+---
+
+## Pattern 2 — Divisibility
+
+```python
+number % divisor == 0
+```
+
+Means:
+
+```text
+number is divisible by divisor
+```
+
+---
+
+## Pattern 3 — Factor
+
+```python
+number % factor == 0
+```
+
+Means:
+
+```text
+factor is a factor of number
+```
+
+---
+
+## Pattern 4 — Accumulator
+
+```python
+sum = 0
+
+sum += value
+```
+
+Means:
+
+```text
+keep adding values to a running total
+```
+
+---
+
+## Pattern 5 — Digit Extraction
+
+```python
+digit = value % 10
+```
+
+Gets the last digit.
+
+```python
+value //= 10
+```
+
+Removes the last digit.
+
+---
+
+## Pattern 6 — GCD
+
+```python
+remainder = first % second
+first = second
+second = remainder
+```
+
+Repeat until:
+
+```python
+second == 0
+```
+
+---
+
+## Pattern 7 — LCM
+
+```text
+LCM = (first × second) / GCD
+```
+
+For integer output:
+
+```python
+lcm = abs(first * second) // abs(gcd)
+```
+
+---
+
+## Pattern 8 — Strong Number
+
+```text
+GET DIGIT
+↓
+FACTORIAL
+↓
+ADD
+↓
+REMOVE DIGIT
+↓
+REPEAT
+↓
+COMPARE
+```
+
+---
+
+## Pattern 9 — AP
+
+```python
+term += difference
+```
+
+Memory:
+
+```text
+AP → ADD
+```
+
+---
+
+## Pattern 10 — GP
+
+```python
+term *= ratio
+```
+
+Memory:
+
+```text
+GP → MULTIPLY
+```
+
+---
+
+# Final Revision Cheat Sheet
+
+```text
+Q21 → SQUARE
+      number * number
+
+Q22 → CUBE
+      number * number * number
+
+Q23 → DIVISIBLE
+      number % 7 == 0
+
+Q24 → GCD
+      remainder = first % second
+      first = second
+      second = remainder
+
+Q25 → LCM
+      LCM = (first * second) / GCD
+
+Q26 → FACTORS
+      number % factor == 0
+
+Q27 → SUM OF FACTORS
+      sum += factor
+
+Q28 → STRONG NUMBER
+      sum += factorial(digit)
+
+Q29 → AP
+      term += difference
+
+Q30 → GP
+      term *= ratio
+```
+
+# What You Should Be Able to Explain Before Moving On
+
+- [ ] Why `range(1, n + 1)` includes `n`
+- [ ] What `%` returns
+- [ ] How `%` is used for divisibility
+- [ ] What a factor is
+- [ ] How an accumulator works
+- [ ] How `% 10` extracts a digit
+- [ ] How `// 10` removes a digit
+- [ ] How the Euclidean GCD algorithm works
+- [ ] The relationship between GCD and LCM
+- [ ] What a Strong Number is
+- [ ] What factorial means
+- [ ] Difference between AP and GP
+- [ ] Why AP uses addition
+- [ ] Why GP uses multiplication
+- [ ] Why `range(n)` gives exactly `n` iterations
+- [ ] Time complexity of the basic loop solutions
+
+---
+
+# Master Memory Pattern
+
+Most of these questions follow one of these patterns:
+
+```text
+LOOP
+↓
+CHECK
+↓
+CALCULATE
+↓
+UPDATE
+↓
+REPEAT
+```
+
+or:
+
+```text
+EXTRACT
+↓
+TRANSFORM
+↓
+ACCUMULATE
+↓
+REPEAT
+```
+
+The goal is not just to memorize the code.
+
+The goal is to understand:
+
+```text
+WHAT IS THE INPUT?
+        ↓
+WHAT DO I NEED TO CHECK?
+        ↓
+WHAT SHOULD I CALCULATE?
+        ↓
+WHAT SHOULD I UPDATE?
+        ↓
+WHEN SHOULD THE LOOP STOP?
+        ↓
+WHAT IS THE FINAL ANSWER?
+```
+
+That thinking pattern is the foundation for the DSA problems that come next.
